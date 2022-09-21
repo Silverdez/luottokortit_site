@@ -20,7 +20,7 @@ add_filter('excerpt_more', function () {
  *
  * @return bool
  */
-//add_filter('acf/settings/show_admin', '__return_false');
+add_filter('acf/settings/show_admin', '__return_false');
 
 /**
  * Remove admin footer text.

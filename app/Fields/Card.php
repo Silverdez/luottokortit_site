@@ -38,10 +38,16 @@ class Card extends Field
                 'instructions' => '',
                 'required' => 1,
             ])
+            ->addText('card_maximum_credit_text', [
+                'instructions' => '',
+            ])
             ->addNumber('card_annual_fee', [
                 'instructions' => '',
                 'required' => 1,
                 'append' => '€',
+            ])
+            ->addText('card_annual_fee_text', [
+                'instructions' => '',
             ])
             ->addNumber('card_nominal_interest_rate', [
                 'instructions' => '',
@@ -49,6 +55,9 @@ class Card extends Field
                 'min' => '0',
                 'max' => '100',
                 'append' => '%',
+            ])
+            ->addText('card_nominal_interest_rate_text', [
+                'instructions' => '',
             ])
             ->addTextarea('card_introduction', [
 

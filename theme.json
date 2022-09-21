@@ -9,6 +9,46 @@
           "slug": "primary",
           "color": "#525ddc",
           "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#0c1d36",
+          "name": "Secondary"
+        },
+        {
+          "slug": "tertiary",
+          "color": "#efab0c",
+          "name": "Tertiary"
+        },
+        {
+          "slug": "quaternary",
+          "color": "#9f78f4",
+          "name": "Quaternary"
+        },
+        {
+          "slug": "quinary",
+          "color": "#47d597",
+          "name": "Quinary"
+        },
+        {
+          "slug": "accent",
+          "color": "#006fff",
+          "name": "Accent"
+        },
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        },
+        {
+          "slug": "gray",
+          "color": "#e8ecf1",
+          "name": "Gray"
+        },
+        {
+          "slug": "black",
+          "color": "#000000",
+          "name": "Black"
         }
       ],
       "custom": false,

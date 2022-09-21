@@ -13,10 +13,6 @@ body {
   @apply font-display text-textGlobal bg-globalBg
 }
 
-.icon-rating path{
-  @apply text-secondary
-}
-
 h1, h2, h3, h4, h5, h6{
   @apply mb-6 relative
 }
@@ -44,8 +40,11 @@ p{
   @apply mb-4
 }
 
-.icon path{
-  @apply text-primary
+p a{
+  @apply text-textAccent underline font-medium transition duration-300 ease-in-out
+}
+p a:hover{
+  @apply text-textMuted
 }
 
 h1:after,
@@ -115,7 +114,7 @@ ul li::marker {
 }
 
 .header_primary {
-  @apply container mx-auto h-full px-6 flex items-center justify-between relative bg-primary lg:bg-opacity-0
+  @apply container mx-auto h-full px-6 flex items-center justify-between relative
 }
 
 .header.active {
@@ -123,7 +122,11 @@ ul li::marker {
 }
 
 .header_primary .header_site-logo {
-  @apply block h-auto w-28
+  @apply block h-auto w-auto text-headerText
+}
+
+.header.active .header_primary .header_site-logo {
+  @apply text-headerAccent
 }
 
 .header_primary .header_main-nav .menu-primary_navigation-container {
@@ -131,7 +134,7 @@ ul li::marker {
 }
 
 .header_primary .header_main-nav{
-  @apply md:block absolute opacity-0 hidden -z-1 md:z-0 top-16 left-0 bg-primary lg:relative lg:top-auto lg:bg-transparent h-almost lg:h-full w-full lg:w-auto lg:opacity-100
+  @apply md:block absolute opacity-0 hidden -z-1 md:z-0 top-16 left-0 bg-headerBgSecondary text-headerMuted lg:text-inherit lg:relative lg:top-auto lg:bg-transparent h-almost lg:h-full w-full lg:w-auto lg:opacity-100
 }
 
 .header_primary .header_main-nav .nav-header{
@@ -145,7 +148,7 @@ ul li::marker {
   @apply  duration-300 w-full py-6 inline-block md:py-2 md:w-auto relative lg:rounded-md text-0.9 py-3 px-4 hover:text-headerAccent hover:bg-headerAccent hover:bg-opacity-5 transition flex items-center cursor-pointer
 }
 .header_primary .header_main-nav .nav-header a:hover{
-  @apply bg-accent bg-opacity-75 text-white
+  @apply bg-headerBgSecondary text-white
 }
 
 .header_primary .header_menu-toggle {
@@ -182,7 +185,7 @@ ul li::marker {
 /*}*/
 
 .header_primary .header_main-nav .sub-menu {
-  @apply hidden relative lg:absolute lg:top-16 bg-accent w-auto transition
+  @apply hidden relative lg:absolute lg:top-16 bg-headerBgSecondary w-auto transition
 }
 
 .header_primary .header_main-nav li:hover .sub-menu{

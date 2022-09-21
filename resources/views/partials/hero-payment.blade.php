@@ -8,7 +8,7 @@
         <div class="container mx-auto px-6">
           <div class="flex flex-wrap text-primary">
             <div class="hero__heading w-full lg:w-4/6 lg:pr-16 mb-8 lg:mb-0">
-              <h1 class="hero__title font-bold text-5xl lg:text-6xl noDecoration uppercase">{!! the_title() !!}</h1>
+              <h1 class="hero__title font-bold text-5xl lg:text-6xl noDecoration">{!! the_title() !!}</h1>
               <p>{!! $fields['card_introduction'] !!}</p>
               <div class="flex items-center justify-start">
                 <span class="bg-white rounded-full px-3 py-1 flex items-center text-cardBaseBg">

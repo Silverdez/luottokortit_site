@@ -2,7 +2,7 @@
   <div class="header_primary">
     <div class="header_site-logo">
       <a class="brand" href="{{ home_url('/') }}">
-        {!! $siteName !!}
+        @svg('images.logo', ['class' => 'w-full h-5 logo'])
       </a>
     </div>
 

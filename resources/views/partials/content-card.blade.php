@@ -1,15 +1,18 @@
 @php
     $cardRating         = get_field('card_rating', $card) ? get_field('card_rating', $card) : "-";
-    $maxCredit          = get_field('card_maximum_credit', $card) ? get_field('card_maximum_credit', $card) : "-";
+    $maxCredit          = get_field('card_maximum_credit', $card) ? get_field('card_maximum_credit', $card) : "€ -";
+    $maxCreditText      = get_field('card_maximum_credit_text', $card) ? get_field('card_maximum_credit_text', $card) : "Maksimiluotto";
     $annualFee          = get_field('card_annual_fee', $card) ? get_field('card_annual_fee', $card) : "0";
+    $annualFeeText      = get_field('card_annual_fee_text', $card) ? get_field('card_annual_fee_text', $card) : "Vuosimaksu";
     $interestRate       = get_field('card_nominal_interest_rate', $card) ? get_field('card_nominal_interest_rate', $card) : "-";
+    $interestRateText   = get_field('card_nominal_interest_rate_text', $card) ? get_field('card_nominal_interest_rate_text', $card) : "Nimelliskorko";
     $cardBtn            = get_field('card_url', $card);
 
     $featured_image     = get_the_post_thumbnail('full', array('class' => ''));
 @endphp
 
 <li class="cardComponent bg-cardBaseBg text-cardBaseText inline-block shadow-lg p-6 w-full rounded-2xl mb-4 relative" @php(post_class('payment__card'))>
-  <span class="absolute top-4 left-4 bg-yellow-400 rounded-full px-3 py-1 text-cardBaseBg text-sm font-medium">@svg('images.icons.star', ['class' => 'icon w-4 h-4 inline-block']){!! $cardRating !!}<span class="text-0.8 font-normal">/5</span></span>
+  <span class="absolute top-4 left-4 bg-yellow-400 rounded-full px-3 py-1 text-cardBaseBg text-sm font-medium leading-4">@svg('images.icons.star', ['class' => 'icon w-4 h-4 mr-1 inline-block text-gray-800']){!! $cardRating !!}<span class="text-0.8 font-normal">/5</span></span>
   <div class="flex flex-wrap">
     <header class="payment__card-header w-full flex flex-col items-center lg:w-3/12 lg:pr-8">
       <a class="payment__card-link inline-block" href="{{ get_permalink($card) }}">
@@ -20,7 +23,7 @@
       @if($cardBtn)
         <button class="block">
           <a class="inline-block bg-btnBg py-3 px-6 w-48 rounded-md mt-6 hover:bg-btnBgHover shadow-lg transition" href="{{$cardBtn['url']}}">
-            {{ $cardBtn['title'] ? $cardBtn['title'] : 'Hea!'}}
+            {{ $cardBtn['title'] ? $cardBtn['title'] : 'Hae!'}}
           </a>
         </button>
       @elseif(!$cardBtn)
@@ -46,21 +49,21 @@
       <div class="payment__card-numbers flex flex-col lg:flex-row lg:gap-4 w-full mb-2 mt-4">
         <div class="w-full lg:w-1/3 text-center leading-4 mb-1">
           <div class="bg-cardAccentBg p-3 rounded-md">
-            <span class="text-xl">€ {!! $maxCredit !!}</span>
-            <h5 class="text-0.8 leading-4 font-semibold mb-0">Maksimiluotto</h5>
+            <span class="text-xl">{!! $maxCredit !!}</span>
+            <h5 class="text-0.8 leading-4 font-semibold mb-0">{!! $maxCreditText !!}</h5>
           </div>
 
         </div>
         <div class="w-full lg:w-1/3 text-center leading-4 mb-1">
           <div class="bg-cardAccentBg p-3 rounded-md">
             <span class="text-xl">{!! $annualFee !!} €</span>
-            <h5 class="text-0.8 leading-4 font-semibold mb-0">Vuosimaksu</h5>
+            <h5 class="text-0.8 leading-4 font-semibold mb-0">{!! $annualFeeText !!}</h5>
           </div>
         </div>
         <div class="w-full lg:w-1/3 text-center leading-4 mb-1">
           <div class="bg-pro p-3 rounded-md">
             <span class="text-xl">{!! $interestRate !!}%</span>
-            <h5 class="text-0.8 leading-4 font-semibold mb-0">Nimelliskorko</h5>
+            <h5 class="text-0.8 leading-4 font-semibold mb-0">{!! $interestRateText !!}</h5>
           </div>
         </div>
 

@@ -28,10 +28,12 @@ class Hero extends Field
                 'instructions' => 'H1 Title of the hero',
                 'required' => 1,
             ])
-            ->addTextarea('hero_description', [
+            ->addWysiwyg('hero_description', [
                 'label' => 'Hero Description',
                 'instructions' => 'Description inside the hero section',
                 'required' => 0,
+                'tabs' => 'text',
+                'media_upload' => 0,
             ])
             ->addLink('hero_link_url',[
                 'label' => 'Hero Link Url'
